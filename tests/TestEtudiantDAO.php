@@ -5,23 +5,18 @@ use BO\EtudiantBO;
 require_once '../Config/appConfig.php';
 
 
-$etudiant = new EtudiantBO();
-$etudiant->setNomEtu("John");
-$etudiant->setPreEtu("Doe");
-$etudiant->setPhotoEtu("john_doe.jpg");
-$etudiant->setMailEtu("john.doe@example.com");
-$etudiant->setTelEtu("123456789");
-$etudiant->setLoginEtu("john.doe");
-$etudiant->setMapEtu("Adresse John Doe");
-$etudiant->setSpeEtu("Informatique");
-
 $etudiantDAO = new EtudiantDAO();
 
-// Test de la méthode create
-if ($etudiantDAO->create($etudiant)) {
-    echo "Étudiant créé avec succès!";
+// Test de la méthode getAll
+$etudiants = $etudiantDAO->getAll();
+
+if (!empty($etudiants)) {
+    echo "Liste des étudiants :<br>";
+    foreach ($etudiants as $etudiant) {
+        echo $etudiant->ToStringO() . "<br>";
+    }
 } else {
-    echo "Erreur lors de la création de l'étudiant.";
+    echo "Aucun étudiant trouvé.";
 }
 
 ?>

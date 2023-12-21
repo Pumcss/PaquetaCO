@@ -4,9 +4,9 @@ namespace BO;
 
 class ParametreBO
 {
-    private $idParametreBil1;
-    private $datelimiteBil1;
-    private $dateLimiteBil2;
+    private int $idParametreBil1;
+    private \DateTime $datelimiteBil1;
+    private \DateTime $dateLimiteBil2;
 
     public function __construct($idParametreBil1, $datelimiteBil1, $dateLimiteBil2) {
         $this->idParametreBil1 = $idParametreBil1;

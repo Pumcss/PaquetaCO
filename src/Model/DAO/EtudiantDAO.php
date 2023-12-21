@@ -15,10 +15,29 @@ class EtudiantDAO {
         $this->conn = $db->getConnection();
     }
 
+    public function getAll()
+    {
+        try {
+            $query = "SELECT * FROM etudiant";
+            $stmt = $this->conn->prepare($query);
+            $stmt->execute();
+            $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            $etudiants = [];
+            foreach ($results as $result) {
+                $etudiants[] = new EtudiantBO($result['idEtu'], $result['nomEtu'], $result['preEtu'], $result['photoEtu'], $result['mailEtu'], $result['telEtu'], $result['loginEtu'], $result['mapEtu'], $result['speEtu']);
+            }
+
+            return $etudiants;
+        } catch (PDOException $e) {
+            echo "Error: " . $e->getMessage();
+            return [];
+        }
+    }
+
     public function create(EtudiantBO $etudiant) {
         try {
-            $query = "INSERT INTO etudiant (idEtu, nomEtu, preEtu, photoEtu, mailEtu, telEtu, loginEtu, mapEtu, speEtu) 
-                      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            $query = "INSERT INTO etudiant (idEtu, nomEtu, preEtu, photoEtu, mailEtu, telEtu, loginEtu, mapEtu, speEtu) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
             $stmt = $this->conn->prepare($query);
             $stmt->execute([$etudiant->getIdEtu(), $etudiant->getNomEtu(), $etudiant->getPreEtu(), $etudiant->getPhotoEtu(), $etudiant->getMailEtu(), $etudiant->getTelEtu(), $etudiant->getLoginEtu(), $etudiant->getMapEtu(), $etudiant->getSpeEtu()]);
             return true;

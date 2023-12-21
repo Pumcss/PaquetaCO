@@ -2,11 +2,13 @@
 
 namespace BO;
 
+
 class EtudiantBO
 {
     private int $idEtu;
     private string $nomEtu;
     private string $preEtu;
+
     private string $photoEtu;
     private string $mailEtu;
     private string $telEtu;
@@ -160,16 +162,21 @@ class EtudiantBO
 
 
 
-    public function __construct($idEtu, $nomEtu, $preEtu, $photoEtu, $mailEtu, $telEtu, $loginEtu, $mapEtu, $speEtu) {
-        $this->idEtu = $idEtu;
-        $this->nomEtu = $nomEtu;
-        $this->preEtu = $preEtu;
-        $this->photoEtu = $photoEtu;
-        $this->mailEtu = $mailEtu;
-        $this->telEtu = $telEtu;
-        $this->loginEtu = $loginEtu;
-        $this->mapEtu = $mapEtu;
-        $this->speEtu = $speEtu;}
+    function __construct(?array $datas = null){
+        if(!is_null($datas)){
+
+            (isset($datas["idEtu"]))?$this->setIdEtu($datas["idEtu"]):$this->idEtu = null;
+            (isset($datas["nomEtu"]))?$this->getNomEtu($datas["nomEtu"]):$this->nomEtu = null;
+            (isset($datas["preEtu"]))?$this->getPreEtu($datas["preEtu"]):$this->preEtu = null;
+            (isset($datas["photoEtu"]))?$this->setPhotoEtu($datas["photoEtu"]):$this->photoEtu = null;
+            (isset($datas["nomEtu"]))?$this->getNomEtu($datas["nomEtu"]):$this->nomEtu = null;
+            (isset($datas["preEtu"]))?$this->getPreEtu($datas["preEtu"]):$this->preEtu = null;
+            (isset($datas["idEtu"]))?$this->setIdEtu($datas["idEtu"]):$this->idEtu = null;
+            (isset($datas["nomEtu"]))?$this->getNomEtu($datas["nomEtu"]):$this->nomEtu = null;
+            (isset($datas["preEtu"]))?$this->getPreEtu($datas["preEtu"]):$this->preEtu = null;
+
+        }
+    }
     public function ToStringO() {
         return "Etudiant - ID: $this->idEtu, Nom: $this->nomEtu, Prenom: $this->preEtu, Mail: $this->mailEtu, Tel: $this->telEtu, Login: $this->loginEtu, Specialite: $this->speEtu";
     }

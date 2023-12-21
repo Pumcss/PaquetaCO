@@ -2,7 +2,6 @@
 
 namespace DAO;
 
-require_once 'Database.php';
 require_once 'TuteurEcoleBO.php';
 
 class TuteurEcoleDAO {
@@ -15,8 +14,7 @@ class TuteurEcoleDAO {
 
     public function create(TuteurEcoleBO $tuteur) {
         try {
-            $query = "INSERT INTO tuteurecole (idTut, nomTut, prenomTut, numTut, mailTut, nbalterTut, loginTut, mdpTut, roleTut) 
-                      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            $query = "INSERT INTO tuteurecole (idTut, nomTut, prenomTut, numTut, mailTut, nbalterTut, loginTut, mdpTut, roleTut) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
             $stmt = $this->conn->prepare($query);
             $stmt->execute([$tuteur->getIdTut(), $tuteur->getNomTut(), $tuteur->getPrenomTut(), $tuteur->getNumTut(), $tuteur->getMailTut(), $tuteur->getNbalterTut(), $tuteur->getLoginTut(), $tuteur->getMdpTut(), $tuteur->getRoleTut()]);
             return true;

@@ -2,7 +2,6 @@
 
 namespace DAO;
 
-require_once 'Database.php';
 require_once 'MaitreEntrepriseBO.php';
 
 class MaitreEntrepriseDAO {
@@ -15,8 +14,7 @@ class MaitreEntrepriseDAO {
 
     public function create(MaitreEntrepriseBO $maitre) {
         try {
-            $query = "INSERT INTO maitreentreprise (idMaitre, nomMaitre, prenomMaitre, telMaitre, mailMaitre) 
-                      VALUES (?, ?, ?, ?, ?)";
+            $query = "INSERT INTO maitreentreprise (idMaitre, nomMaitre, prenomMaitre, telMaitre, mailMaitre) VALUES (?, ?, ?, ?, ?)";
             $stmt = $this->conn->prepare($query);
             $stmt->execute([$maitre->getIdMaitre(), $maitre->getNomMaitre(), $maitre->getPrenomMaitre(), $maitre->getTelMaitre(), $maitre->getMailMaitre()]);
             return true;

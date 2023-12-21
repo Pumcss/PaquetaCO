@@ -4,9 +4,9 @@ namespace BO;
 
 class EtreBO
 {
-    private $idEtu;
-    private $idEntre;
-    private $idMaitre;
+    private int $idEtu;
+    private int $idEntre;
+    private int $idMaitre;
 
     public function __construct($idEtu, $idEntre, $idMaitre) {
         $this->idEtu = $idEtu;

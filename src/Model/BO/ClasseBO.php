@@ -4,7 +4,7 @@ namespace BO;
 
 class ClasseBO
 {
-    private $nomClasse;
+    private string $nomClasse;
 
     public function __construct($nomClasse) {
         $this->nomClasse = $nomClasse;

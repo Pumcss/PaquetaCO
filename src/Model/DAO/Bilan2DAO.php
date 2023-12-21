@@ -2,7 +2,6 @@
 
 namespace DAO;
 
-require_once 'Database.php';
 require_once 'Bilan2BO.php';
 
 class Bilan2DAO {

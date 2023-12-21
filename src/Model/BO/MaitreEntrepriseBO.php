@@ -4,11 +4,11 @@ namespace BO;
 
 class MaitreEntrepriseBO
 {
-    private $idMaitre;
-    private $nomMaitre;
-    private $prenomMaitre;
-    private $telMaitre;
-    private $mailMaitre;
+    private int $idMaitre;
+    private string $nomMaitre;
+    private string $prenomMaitre;
+    private string $telMaitre;
+    private string $mailMaitre;
 
     public function __construct($idMaitre, $nomMaitre, $prenomMaitre, $telMaitre, $mailMaitre) {
         $this->idMaitre = $idMaitre;
