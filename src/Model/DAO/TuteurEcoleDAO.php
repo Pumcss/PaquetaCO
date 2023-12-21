@@ -2,6 +2,10 @@
 
 namespace DAO;
 
+use BO\TuteurEcoleBO;
+use PDO;
+use PDOException;
+
 require_once 'Database.php';
 require_once 'TuteurEcoleBO.php';
 

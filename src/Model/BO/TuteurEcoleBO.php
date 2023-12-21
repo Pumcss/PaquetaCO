@@ -170,7 +170,8 @@ class TuteurEcoleBO
         $this->roleTut = $roleTut;
     }
 
-    public function ToString() {
+    public function ToString(): string
+    {
         return "TuteurEcole - ID: $this->idTut, Nom: $this->nomTut, Prenom: $this->prenomTut, Numéro: $this->numTut, Mail: $this->mailTut, Alternances: $this->nbalterTut, Login: $this->loginTut, Role: $this->roleTut";
     }
 }

@@ -2,6 +2,10 @@
 
 namespace DAO;
 
+use BO\EntrepriseBO;
+use PDO;
+use PDOException;
+
 require_once 'Database.php';
 require_once 'EntrepriseBO.php';
 
@@ -13,7 +17,8 @@ class EntrepriseDAO {
         $this->conn = $db->getConnection();
     }
 
-    public function create(EntrepriseBO $entreprise) {
+    public function create(EntrepriseBO $entreprise): bool
+    {
         try {
             $query = "INSERT INTO entreprise (idEntre, nomEntre, adresseEntre, villeEntre, codePostEntre) 
                       VALUES (?, ?, ?, ?, ?)";
@@ -43,7 +48,8 @@ class EntrepriseDAO {
         }
     }
 
-    public function update(EntrepriseBO $entreprise) {
+    public function update(EntrepriseBO $entreprise): bool
+    {
         try {
             $query = "UPDATE entreprise SET nomEntre = ?, adresseEntre = ?, villeEntre = ?, codePostEntre = ? WHERE idEntre = ?";
             $stmt = $this->conn->prepare($query);
@@ -55,7 +61,8 @@ class EntrepriseDAO {
         }
     }
 
-    public function delete($idEntre) {
+    public function delete($idEntre): bool
+    {
         try {
             $query = "DELETE FROM entreprise WHERE idEntre = ?";
             $stmt = $this->conn->prepare($query);

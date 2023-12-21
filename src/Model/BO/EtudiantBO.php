@@ -6,14 +6,15 @@ class EtudiantBO
 {
     private int $idEtu;
     private string $nomEtu;
-    private string $preEtu;
+    private string $prenomEtu;
     private string $photoEtu;
     private string $mailEtu;
     private string $telEtu;
     private string $loginEtu;
-    private string $mapEtu;
+    private string $mdpEtu;
     private string $speEtu;
-
+    private int $idClasse;
+    private int $idTut;
     /**
      * @return int
      */
@@ -49,17 +50,17 @@ class EtudiantBO
     /**
      * @return string
      */
-    public function getPreEtu(): string
+    public function getPrenomEtu(): string
     {
-        return $this->preEtu;
+        return $this->prenomEtu;
     }
 
     /**
-     * @param string $preEtu
+     * @param string $prenomEtu
      */
-    public function setPreEtu(string $preEtu): void
+    public function setPrenomEtu(string $prenomEtu): void
     {
-        $this->preEtu = $preEtu;
+        $this->prenomEtu = $prenomEtu;
     }
 
     /**
@@ -129,17 +130,17 @@ class EtudiantBO
     /**
      * @return string
      */
-    public function getMapEtu(): string
+    public function getMdpEtu(): string
     {
-        return $this->mapEtu;
+        return $this->mdpEtu;
     }
 
     /**
-     * @param string $mapEtu
+     * @param string $mdpEtu
      */
-    public function setMapEtu(string $mapEtu): void
+    public function setMdpEtu(string $mdpEtu): void
     {
-        $this->mapEtu = $mapEtu;
+        $this->mdpEtu = $mdpEtu;
     }
 
     /**
@@ -158,19 +159,57 @@ class EtudiantBO
         $this->speEtu = $speEtu;
     }
 
+    /**
+     * @return int
+     */
+    public function getIdClasse(): int
+    {
+        return $this->idClasse;
+    }
+
+    /**
+     * @param int $idClasse
+     */
+    public function setIdClasse(int $idClasse): void
+    {
+        $this->idClasse = $idClasse;
+    }
+
+    /**
+     * @return int
+     */
+    public function getIdTut(): int
+    {
+        return $this->idTut;
+    }
+
+    /**
+     * @param int $idTut
+     */
+    public function setIdTut(int $idTut): void
+    {
+        $this->idTut = $idTut;
+    }
 
 
-    public function __construct($idEtu, $nomEtu, $preEtu, $photoEtu, $mailEtu, $telEtu, $loginEtu, $mapEtu, $speEtu) {
-        $this->idEtu = $idEtu;
+
+    public function __construct($nomEtu, $prenomEtu, $photoEtu, $mailEtu, $telEtu, $loginEtu, $mdpEtu, $speEtu, $idClasse , $idTut, $idEtu = null) {
+        if ($idEtu != null){
+            $this->idEtu = $idEtu;
+        }
         $this->nomEtu = $nomEtu;
-        $this->preEtu = $preEtu;
+        $this->prenomEtu = $prenomEtu;
         $this->photoEtu = $photoEtu;
         $this->mailEtu = $mailEtu;
         $this->telEtu = $telEtu;
         $this->loginEtu = $loginEtu;
-        $this->mapEtu = $mapEtu;
-        $this->speEtu = $speEtu;}
-    public function ToStringO() {
-        return "Etudiant - ID: $this->idEtu, Nom: $this->nomEtu, Prenom: $this->preEtu, Mail: $this->mailEtu, Tel: $this->telEtu, Login: $this->loginEtu, Specialite: $this->speEtu";
+        $this->mdpEtu = $mdpEtu;
+        $this->speEtu = $speEtu;
+        $this->idClasse= $idClasse;
+        $this->idTut = $idTut;
+    }
+    public function ToStringO(): string
+    {
+        return "Etudiant - ID: $this->idEtu, Nom: $this->nomEtu, Prenom: $this->prenomEtu, Mail: $this->mailEtu, Tel: $this->telEtu, Login: $this->loginEtu, Specialite: $this->speEtu";
     }
 }
