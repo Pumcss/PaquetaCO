@@ -4,43 +4,44 @@ namespace BO;
 
 class Bilan2BO
 {
-    private int $idBilz;
-    private \DateTime  $datbil2;
+    private int $idBil2;
+    private \DateTime  $dateBil2;
     private float $notedosBil2;
     private float $noteoralBil2;
     private string $remarqueBil2;
-    private string $memoirBi2;
+    private string $memoirBil2;
+    private int $idEtu;
 
     /**
      * @return int
      */
-    public function getIdBilz(): int
+    public function getIdBil2(): int
     {
-        return $this->idBilz;
+        return $this->idBil2;
     }
 
     /**
-     * @param int $idBilz
+     * @param int $idBil2
      */
-    public function setIdBilz(int $idBilz): void
+    public function setIdBil2(int $idBil2): void
     {
-        $this->idBilz = $idBilz;
+        $this->idBil2 = $idBil2;
     }
 
     /**
      * @return \DateTime
      */
-    public function getDatbil2(): \DateTime
+    public function getDateBil2(): \DateTime
     {
-        return $this->datbil2;
+        return $this->dateBil2;
     }
 
     /**
-     * @param \DateTime $datbil2
+     * @param \DateTime $dateBil2
      */
-    public function setDatbil2(\DateTime $datbil2): void
+    public function setDateBil2(\DateTime $dateBil2): void
     {
-        $this->datbil2 = $datbil2;
+        $this->dateBil2 = $dateBil2;
     }
 
     /**
@@ -94,28 +95,47 @@ class Bilan2BO
     /**
      * @return string
      */
-    public function getMemoirBi2(): string
+    public function getMemoirBil2(): string
     {
-        return $this->memoirBi2;
+        return $this->memoirBil2;
     }
 
     /**
-     * @param string $memoirBi2
+     * @param string $memoirBil2
      */
-    public function setMemoirBi2(string $memoirBi2): void
+    public function setMemoirBil2(string $memoirBil2): void
     {
-        $this->memoirBi2 = $memoirBi2;
+        $this->memoirBil2 = $memoirBil2;
     }
 
-    public function __construct($idBilz, $datbil2, $notedosBil2, $noteoralBil2, $remarqueBil2, $memoirBi2) {
-        $this->idBilz = $idBilz;
-        $this->datbil2 = $datbil2;
+    /**
+     * @return int
+     */
+    public function getIdEtu(): int
+    {
+        return $this->idEtu;
+    }
+
+    /**
+     * @param int $idEtu
+     */
+    public function setIdEtu(int $idEtu): void
+    {
+        $this->idEtu = $idEtu;
+    }
+
+
+    public function __construct($idBil2, $dateBil2, $notedosBil2, $noteoralBil2, $remarqueBil2, $memoirBil2,$idEtu) {
+        $this->idBil2 = $idBil2;
+        $this->dateBil2 = $dateBil2;
         $this->notedosBil2 = $notedosBil2;
         $this->noteoralBil2 = $noteoralBil2;
         $this->remarqueBil2 = $remarqueBil2;
-        $this->memoirBi2 = $memoirBi2;
+        $this->memoirBil2 = $memoirBil2;
+        $this->idEtu = $idEtu;
     }
-    public function ToString() {
-        return "Bilan2 - ID: $this->idBilz, Date: $this->datbil2, Note Dos: $this->notedosBil2, Note Orale: $this->noteoralBil2, Remarque: $this->remarqueBil2, Memoire: $this->memoirBi2";
+    public function ToString(): string
+    {
+        return "Bilan2 - ID: $this->idBil2, Date: $this->dateBil2, Note Dos: $this->notedosBil2, Note Orale: $this->noteoralBil2, Remarque: $this->remarqueBil2, Memoire: $this->memoirBil2";
     }
 }

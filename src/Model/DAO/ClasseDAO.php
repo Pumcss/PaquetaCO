@@ -2,7 +2,10 @@
 
 namespace DAO;
 
-require_once 'ClasseBO.php';
+
+use BO\ClasseBO;
+use PDO;
+use PDOException;
 
 class ClasseDAO {
     private $conn;
@@ -12,7 +15,8 @@ class ClasseDAO {
         $this->conn = $db->getConnection();
     }
 
-    public function create(ClasseBO $classe) {
+    public function create(ClasseBO $classe): bool
+    {
         try {
             $query = "INSERT INTO classe (nomClasse) VALUES (?)";
             $stmt = $this->conn->prepare($query);
@@ -42,7 +46,8 @@ class ClasseDAO {
         }
     }
 
-    public function update(ClasseBO $classe) {
+    public function update(ClasseBO $classe): bool
+    {
         try {
             $query = "UPDATE classe SET nomClasse = ? WHERE nomClasse = ?";
             $stmt = $this->conn->prepare($query);
@@ -54,7 +59,8 @@ class ClasseDAO {
         }
     }
 
-    public function delete($nomClasse) {
+    public function delete($nomClasse): bool
+    {
         try {
             $query = "DELETE FROM classe WHERE nomClasse = ?";
             $stmt = $this->conn->prepare($query);

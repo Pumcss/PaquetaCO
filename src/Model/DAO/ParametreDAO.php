@@ -2,7 +2,11 @@
 
 namespace DAO;
 
-require_once 'ParametreBO.php';
+
+use BO\ParametreBO;
+use PDOException;
+
+
 
 class ParametreDAO {
     private $conn;
@@ -14,7 +18,7 @@ class ParametreDAO {
 
     public function create(ParametreBO $parametre) {
         try {
-            $query = "INSERT INTO parametre (idParametreBil1, datelimiteBil1, dateLimiteBil2) VALUES (?, ?, ?)";
+            $query = "INSERT INTO parametre_ (idParametreBil1, datelimiteBil1, dateLimiteBil2) VALUES (?, ?, ?)";
             $stmt = $this->conn->prepare($query);
             $stmt->execute([$parametre->getIdParametreBil1(), $parametre->getDatelimiteBil1(), $parametre->getDateLimiteBil2()]);
             return true;
@@ -26,7 +30,7 @@ class ParametreDAO {
 
     public function read($idParametreBil1) {
         try {
-            $query = "SELECT * FROM parametre WHERE idParametreBil1 = ?";
+            $query = "SELECT * FROM parametre_ WHERE idParametreBil1 = ?";
             $stmt = $this->conn->prepare($query);
             $stmt->execute([$idParametreBil1]);
             $result = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -44,7 +48,7 @@ class ParametreDAO {
 
     public function update(ParametreBO $parametre) {
         try {
-            $query = "UPDATE parametre SET datelimiteBil1 = ?, dateLimiteBil2 = ? WHERE idParametreBil1 = ?";
+            $query = "UPDATE parametre_ SET datelimiteBil1 = ?, dateLimiteBil2 = ? WHERE idParametreBil1 = ?";
             $stmt = $this->conn->prepare($query);
             $stmt->execute([$parametre->getDatelimiteBil1(), $parametre->getDateLimiteBil2(), $parametre->getIdParametreBil1()]);
             return true;
@@ -56,7 +60,7 @@ class ParametreDAO {
 
     public function delete($idParametreBil1) {
         try {
-            $query = "DELETE FROM parametre WHERE idParametreBil1 = ?";
+            $query = "DELETE FROM parametre_ WHERE idParametreBil1 = ?";
             $stmt = $this->conn->prepare($query);
             $stmt->execute([$idParametreBil1]);
             return true;

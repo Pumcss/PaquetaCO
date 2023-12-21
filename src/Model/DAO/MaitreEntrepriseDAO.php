@@ -2,7 +2,12 @@
 
 namespace DAO;
 
-require_once 'MaitreEntrepriseBO.php';
+
+use BO\MaitreEntrepriseBO;
+use PDO;
+use PDOException;
+
+
 
 class MaitreEntrepriseDAO {
     private $conn;
@@ -12,7 +17,8 @@ class MaitreEntrepriseDAO {
         $this->conn = $db->getConnection();
     }
 
-    public function create(MaitreEntrepriseBO $maitre) {
+    public function create(MaitreEntrepriseBO $maitre): bool
+    {
         try {
             $query = "INSERT INTO maitreentreprise (idMaitre, nomMaitre, prenomMaitre, telMaitre, mailMaitre) VALUES (?, ?, ?, ?, ?)";
             $stmt = $this->conn->prepare($query);
