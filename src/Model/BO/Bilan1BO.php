@@ -2,14 +2,17 @@
 
 namespace BO;
 
+use DateTime;
+
 class Bilan1BO
 {
     private int $idBil1;
-    private \DateTime $datevisiteBil1;
-    private  float $noteentreBil1;
+    private DateTime $datevisiteBil1;
+    private  float $noteentreil1;
     private float $notedosBil1;
     private float $noteoraleBil1;
     private string $remarqueBil1;
+    private int $idEtu;
 
     /**
      * @return int
@@ -28,17 +31,17 @@ class Bilan1BO
     }
 
     /**
-     * @return \DateTime
+     * @return DateTime
      */
-    public function getDatevisiteBil1(): \DateTime
+    public function getDatevisiteBil1(): DateTime
     {
         return $this->datevisiteBil1;
     }
 
     /**
-     * @param \DateTime $datevisiteBil1
+     * @param DateTime $datevisiteBil1
      */
-    public function setDatevisiteBil1(\DateTime $datevisiteBil1): void
+    public function setDatevisiteBil1(DateTime $datevisiteBil1): void
     {
         $this->datevisiteBil1 = $datevisiteBil1;
     }
@@ -46,17 +49,17 @@ class Bilan1BO
     /**
      * @return float
      */
-    public function getNoteentreBil1(): float
+    public function getNoteentreil1(): float
     {
-        return $this->noteentreBil1;
+        return $this->noteentreil1;
     }
 
     /**
-     * @param float $noteentreBil1
+     * @param float $noteentreil1
      */
-    public function setNoteentreBil1(float $noteentreBil1): void
+    public function setNoteentreil1(float $noteentreil1): void
     {
-        $this->noteentreBil1 = $noteentreBil1;
+        $this->noteentreil1 = $noteentreil1;
     }
 
     /**
@@ -107,16 +110,34 @@ class Bilan1BO
         $this->remarqueBil1 = $remarqueBil1;
     }
 
-    public function __construct($idBil1, $datevisiteBil1, $noteentreBil1, $notedosBil1, $noteoraleBil1, $remarqueBil1) {
+    /**
+     * @return int
+     */
+    public function getIdEtu(): int
+    {
+        return $this->idEtu;
+    }
+
+    /**
+     * @param int $idEtu
+     */
+    public function setIdEtu(int $idEtu): void
+    {
+        $this->idEtu = $idEtu;
+    }
+
+    public function __construct($idBil1, $datevisiteBil1, $noteentreil1, $notedosBil1, $noteoraleBil1, $remarqueBil1, $idEtu) {
         $this->idBil1 = $idBil1;
         $this->datevisiteBil1 = $datevisiteBil1;
-        $this->noteentreBil1 = $noteentreBil1;
+        $this->noteentreil1 = $noteentreil1;
         $this->notedosBil1 = $notedosBil1;
         $this->noteoraleBil1 = $noteoraleBil1;
         $this->remarqueBil1 = $remarqueBil1;
+        $this->idEtu = $idEtu;
     }
 
-    public function ToString() {
-        return "Bilan1 - ID: $this->idBil1, Date Visite: $this->datevisiteBil1, Note Entreprise: $this->noteentreBil1, Note Dos: $this->notedosBil1, Note Orale: $this->noteoraleBil1, Remarque: $this->remarqueBil1";
+    public function ToString(): string
+    {
+        return "Bilan1 - ID: $this->idBil1, Date Visite: $this->datevisiteBil1, Note Entreprise: $this->noteentreil1, Note Dos: $this->notedosBil1, Note Orale: $this->noteoraleBil1, Remarque: $this->remarqueBil1";
     }
 }

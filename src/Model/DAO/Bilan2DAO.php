@@ -2,6 +2,10 @@
 
 namespace DAO;
 
+use BO\Bilan2BO;
+use PDO;
+use PDOException;
+
 require_once 'Database.php';
 require_once 'Bilan2BO.php';
 
@@ -13,12 +17,13 @@ class Bilan2DAO {
         $this->conn = $db->getConnection();
     }
 
-    public function create(Bilan2BO $bilan2) {
+    public function create(Bilan2BO $bilan2): bool
+    {
         try {
-            $query = "INSERT INTO bilan2 (idBilz, datbil2, notedosBil2, noteoralBil2, remarqueBil2, memoirBi2) 
+            $query = "INSERT INTO bilan_2 (idBil2, dateBil2, notedosBil2, noteoralBil2, remarqueBil2, memoirBil2) 
                       VALUES (?, ?, ?, ?, ?, ?)";
             $stmt = $this->conn->prepare($query);
-            $stmt->execute([$bilan2->getIdBilz(), $bilan2->getDatbil2(), $bilan2->getNotedosBil2(), $bilan2->getNoteoralBil2(), $bilan2->getRemarqueBil2(), $bilan2->getMemoirBi2()]);
+            $stmt->execute([$bilan2->getIdBil2(), $bilan2->getDateBil2(), $bilan2->getNotedosBil2(), $bilan2->getNoteoralBil2(), $bilan2->getRemarqueBil2(), $bilan2->getMemoirBil2()]);
             return true;
         } catch (PDOException $e) {
             echo "Error: " . $e->getMessage();
@@ -26,15 +31,15 @@ class Bilan2DAO {
         }
     }
 
-    public function read($idBilz) {
+    public function read($idBil2) {
         try {
-            $query = "SELECT * FROM bilan2 WHERE idBilz = ?";
+            $query = "SELECT * FROM bilan_2 WHERE idBil2 = ?";
             $stmt = $this->conn->prepare($query);
-            $stmt->execute([$idBilz]);
+            $stmt->execute([$idBil2]);
             $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
             if ($result) {
-                return new Bilan2BO($result['idBilz'], $result['datbil2'], $result['notedosBil2'], $result['noteoralBil2'], $result['remarqueBil2'], $result['memoirBi2']);
+                return new Bilan2BO($result['idBil2'], $result['dateBil2'], $result['notedosBil2'], $result['noteoralBil2'], $result['remarqueBil2'], $result['memoirBil2'],['idEtu']);
             }
 
             return null;
@@ -44,11 +49,12 @@ class Bilan2DAO {
         }
     }
 
-    public function update(Bilan2BO $bilan2) {
+    public function update(Bilan2BO $bilan2): bool
+    {
         try {
-            $query = "UPDATE bilan2 SET datbil2 = ?, notedosBil2 = ?, noteoralBil2 = ?, remarqueBil2 = ?, memoirBi2 = ? WHERE idBilz = ?";
+            $query = "UPDATE bilan_2 SET dateBil2 = ?, notedosBil2 = ?, noteoralBil2 = ?, remarqueBil2 = ?, memoirBil2 = ? WHERE idBil2 = ?";
             $stmt = $this->conn->prepare($query);
-            $stmt->execute([$bilan2->getDatbil2(), $bilan2->getNotedosBil2(), $bilan2->getNoteoralBil2(), $bilan2->getRemarqueBil2(), $bilan2->getMemoirBi2(), $bilan2->getIdBilz()]);
+            $stmt->execute([$bilan2->getDateBil2(), $bilan2->getNotedosBil2(), $bilan2->getNoteoralBil2(), $bilan2->getRemarqueBil2(), $bilan2->getMemoirBil2(), $bilan2->getIdBil2()]);
             return true;
         } catch (PDOException $e) {
             echo "Error: " . $e->getMessage();
@@ -56,11 +62,12 @@ class Bilan2DAO {
         }
     }
 
-    public function delete($idBilz) {
+    public function delete($idBil2): bool
+    {
         try {
-            $query = "DELETE FROM bilan2 WHERE idBilz = ?";
+            $query = "DELETE FROM bilan_2 WHERE idBil2 = ?";
             $stmt = $this->conn->prepare($query);
-            $stmt->execute([$idBilz]);
+            $stmt->execute([$idBil2]);
             return true;
         } catch (PDOException $e) {
             echo "Error: " . $e->getMessage();

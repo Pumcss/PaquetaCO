@@ -3,9 +3,11 @@ session_start();
 
 
 define('BASE_DIR', dirname(dirname(__FILE__)));
+define('PUBLIC_DIR', BASE_DIR . DIRECTORY_SEPARATOR . 'public' . DIRECTORY_SEPARATOR);    //  Pour les fichiers publics
 define('SRC_DIR', BASE_DIR . DIRECTORY_SEPARATOR . 'src\Model' . DIRECTORY_SEPARATOR );
-
 define('CLASS_DIR', SRC_DIR . PATH_SEPARATOR);
+define('CONFIG_DIR', BASE_DIR . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR);    //  Pour les fichiers de configuration
+
 set_include_path(get_include_path().PATH_SEPARATOR.CLASS_DIR);
 
 spl_autoload_register(function ($className) {

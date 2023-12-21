@@ -1,33 +1,37 @@
 <?php
 
 namespace DAO;
+
+//require_once './../../../Config/appConfig.php';
+
 use BO\EtudiantBO;
-
-
-require_once '../../../Config/appConfig.php';
+use PDO;
+use PDOException;
 
 
 class EtudiantDAO {
-    private $conn;
+    private PDO $conn;
 
     public function __construct() {
         $db = new Database();
         $this->conn = $db->getConnection();
     }
 
-    public function create(EtudiantBO $etudiant) {
+    public function create(EtudiantBO $etudiant): bool
+    {
         try {
-            $query = "INSERT INTO etudiant (idEtu, nomEtu, preEtu, photoEtu, mailEtu, telEtu, loginEtu, mapEtu, speEtu) 
-                      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            $query = "INSERT INTO etudiant ( nomEtu, prenomEtu, photoEtu, mailEtu, telEtu, loginEtu, mdpEtu, speEtu,idClasse, idTut) 
+                      VALUES ( ?, ?, ?, ?, ?, ?, ?, ?,?,?)";
             $stmt = $this->conn->prepare($query);
-            $stmt->execute([$etudiant->getIdEtu(), $etudiant->getNomEtu(), $etudiant->getPreEtu(), $etudiant->getPhotoEtu(), $etudiant->getMailEtu(), $etudiant->getTelEtu(), $etudiant->getLoginEtu(), $etudiant->getMapEtu(), $etudiant->getSpeEtu()]);
+            $stmt->execute([ $etudiant->getNomEtu(), $etudiant->getPrenomEtu(), $etudiant->getPhotoEtu(), $etudiant->getMailEtu(), $etudiant->getTelEtu(), $etudiant->getLoginEtu(), $etudiant->getmdpEtu(), $etudiant->getSpeEtu(),$etudiant->getIdClasse(),$etudiant->getIdTut()]);
             return true;
         } catch (PDOException $e) {
             echo "Error: " . $e->getMessage();
             return false;
         }
     }
-    public function read($idEtu) {
+    public function read($idEtu): ?EtudiantBO
+    {
         try {
             $query = "SELECT * FROM etudiant WHERE idEtu = ?";
             $stmt = $this->conn->prepare($query);
@@ -35,7 +39,20 @@ class EtudiantDAO {
             $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
             if ($result) {
-                return new EtudiantBO($result['idEtu'], $result['nomEtu'], $result['preEtu'], $result['photoEtu'], $result['mailEtu'], $result['telEtu'], $result['loginEtu'], $result['mapEtu'], $result['speEtu']);
+                return new EtudiantBO(
+                    nomEtu: $result['nomEtu'],
+                    prenomEtu: $result['prenomEtu'],
+                    photoEtu: $result['photoEtu'],
+                    mailEtu: $result['mailEtu'],
+                    telEtu: $result['telEtu'],
+                    loginEtu: $result['loginEtu'],
+                    mdpEtu: $result['mdpEtu'],
+                    speEtu: $result['speEtu'],
+                    idClasse: $result['idClasse'],
+                    idTut: $result['idTut'],
+                    idEtu: $result['idEtu'],
+
+                );
             }
 
             return null;
@@ -45,11 +62,12 @@ class EtudiantDAO {
         }
     }
 
-    public function update(EtudiantBO $etudiant) {
+    public function update(EtudiantBO $etudiant): bool
+    {
         try {
-            $query = "UPDATE etudiant SET nomEtu = ?, preEtu = ?, photoEtu = ?, mailEtu = ?, telEtu = ?, loginEtu = ?, mapEtu = ?, speEtu = ? WHERE idEtu = ?";
+            $query = "UPDATE etudiant SET nomEtu = ?, prenomEtu = ?, photoEtu = ?, mailEtu = ?, telEtu = ?, loginEtu = ?, mdpEtu = ?, speEtu = ? WHERE idEtu = ?";
             $stmt = $this->conn->prepare($query);
-            $stmt->execute([$etudiant->getNomEtu(), $etudiant->getPreEtu(), $etudiant->getPhotoEtu(), $etudiant->getMailEtu(), $etudiant->getTelEtu(), $etudiant->getLoginEtu(), $etudiant->getMapEtu(), $etudiant->getSpeEtu(), $etudiant->getIdEtu()]);
+            $stmt->execute([$etudiant->getNomEtu(), $etudiant->getPrenomEtu(), $etudiant->getPhotoEtu(), $etudiant->getMailEtu(), $etudiant->getTelEtu(), $etudiant->getLoginEtu(), $etudiant->getmdpEtu(), $etudiant->getSpeEtu(), $etudiant->getIdEtu()]);
             return true;
         } catch (PDOException $e) {
             echo "Error: " . $e->getMessage();
@@ -57,7 +75,8 @@ class EtudiantDAO {
         }
     }
 
-    public function delete($idEtu) {
+    public function delete($idEtu): bool
+    {
         try {
             $query = "DELETE FROM etudiant WHERE idEtu = ?";
             $stmt = $this->conn->prepare($query);
@@ -68,4 +87,23 @@ class EtudiantDAO {
             return false;
         }
     }
+    /*
+    public function getall(){
+        try {
+
+            $stmt = $this->conn->prepare(
+                "SELECT * FROM etudiant "
+            );
+            $stmt->execute();
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            if ($result) {
+                var_dump($result);
+            }
+        } catch (PDOException $e){
+            echo "Error: " . $e->getMessage();
+            return null;
+        }
+    }
+    */
 }
