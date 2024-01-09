@@ -158,8 +158,11 @@ class TuteurEcoleBO
         $this->roleTut = $roleTut;
     }
 
-    public function __construct($idTut, $nomTut, $prenomTut, $numTut, $mailTut, $nbalterTut, $loginTut, $mdpTut, $roleTut) {
-        $this->idTut = $idTut;
+    public function __construct( $nomTut, $prenomTut, $numTut, $mailTut, $nbalterTut, $loginTut, $mdpTut, $roleTut,$idTut=null) {
+        if ($idTut!= null){
+            $this->idTut = $idTut;
+        }
+
         $this->nomTut = $nomTut;
         $this->prenomTut = $prenomTut;
         $this->numTut = $numTut;

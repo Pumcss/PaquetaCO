@@ -23,7 +23,7 @@ $etu=null;
     <title>Mes informations</title>
 </head>
 <body>
-<a href="TestEtudiantDAO.php?idEtu=3">Vers le Best Etudiant</a>
+<a href="MesInformationsEtudiant.php?idEtu=3">Vers le Best Etudiant</a>
 <ul>
     <li><b>Nom :  <?=$etu->getNomEtu()?></b></li>
     <li><b>Prenom : <?=$etu->getPrenomEtu()?> </b></li>

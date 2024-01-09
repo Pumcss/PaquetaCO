@@ -32,6 +32,9 @@ if ($etudiantDAO->create($etudiant)) {
 }
 
 */
+$etudiantDAO= New EtudiantDAO($infoBdd);
+$lesEtudiants=$etudiantDAO->getAll();
+var_dump ($lesEtudiants );
 
 if (isset($_GET["idEtu"])){
     $etudiantDAO = new EtudiantDAO();
@@ -47,10 +50,10 @@ if (isset($_GET["idEtu"])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mes informations</title>
+    <title>Mes Informations</title>
 </head>
 <body>
-<a href="TestEtudiantDAO.php?idEtu=3">Vers le Best Etudiant</a>
+<a href="TestEtudiantDAO.php?idEtu=3">Vers le plus nul Etudiant</a>
 <ul>
     <li><b>Nom :  <?=$etu->getNomEtu()?></b></li>
     <li><b>Prenom : <?=$etu->getPrenomEtu()?> </b></li>

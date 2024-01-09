@@ -105,5 +105,10 @@ class EtudiantDAO {
             return null;
         }
     }
-    */
+    */public function getAll(): ?array {
+    $query = "SELECT * FROM Etudiant";
+    $stmt = $this->conn->query($query);
+    $etudiant = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+    return $etudiant;
+}
 }

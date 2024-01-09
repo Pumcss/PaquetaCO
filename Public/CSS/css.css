@@ -1,0 +1,287 @@
+
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+
+}
+
+
+/* Code CSS MAIN */
+
+.main{
+    width: 750px;
+    height: 695px;
+    padding: 100px 0px;
+    background-image: url("https://png.pngtree.com/thumb_back/fh260/background/20201111/pngtree-modern-green-gradient-trendy-background-vector-illustration-eps10-image_468754.jpg");
+}
+
+
+.Main2 img {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    left: 170px;
+    bottom: 150px;
+}
+
+.Text{
+    position: absolute;
+    left: 275px;
+    top: 120px;
+    color: white;
+}
+
+.Text h3{
+    font-size: 2em;
+    position: absolute;
+    top: -70px;
+    left: -5px;
+    width: 250px;
+}
+
+
+.Main2{
+    position: absolute;
+    right: 170px;
+    top: 350px;
+    color: white;
+    background-color: #0b5032;
+}
+
+.main2{
+    position: absolute;
+    left: 750px;
+    bottom: -1px;
+    width: 750px;
+    height: 700px;
+    background-color: #0b5032;
+}
+
+#triangle {
+    position: absolute;
+    left: -220px;
+    top: -5px;
+    width: 80px;
+    height: 80px;
+    transform: rotate(270deg);
+    border-left: 80px solid transparent;
+    border-right: 80px solid transparent;
+    border-bottom: 80px solid #0b5032;
+}
+
+
+.main3{
+    width: 100%;
+    height: 695px;
+    position: absolute;
+    padding: 100px 0px;
+    background-image: url("https://png.pngtree.com/thumb_back/fh260/background/20201111/pngtree-modern-green-gradient-trendy-background-vector-illustration-eps10-image_468754.jpg");
+}
+
+.Main3 img{
+    position: absolute;
+    left: 50px;
+    top: 50px;
+    width: 150px;
+    height: 150px;
+
+}
+
+.Main3 .Text h3{
+    font-size: 2em;
+    position: absolute;
+    top: -70px;
+    left: 770px;
+    width: 250px;
+}
+
+.Main3 .wrapper2{
+    position: absolute;
+    left: 605px;
+    top: 10px;
+    color: white;
+}
+
+.Main4{
+    position: absolute;
+    right: 170px;
+    top: 300px;
+    color: white;
+    background-color: #0b5032;
+}
+
+.main4{
+    position: absolute;
+    left: -1px;
+    bottom: 10px;
+    width: 750px;
+    height: 700px;
+    background-color: #0b5032;
+}
+
+.Main4 img {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    left: 150px;
+    bottom: 110px;
+}
+
+.main4 #triangle {
+    position: absolute;
+    left: 590px;
+    top: 20px;
+    width: 80px;
+    height: 80px;
+    transform: rotate(90deg);
+    border-left: 80px solid transparent;
+    border-right: 80px solid transparent;
+    border-bottom: 80px solid #0b5032;
+}
+
+
+
+/* Code CSS WRAPPER */
+
+.wrapper{
+    position: absolute;
+    left: -150px;
+    top: 30px;
+    width: 500px;
+    height: 450px;
+    background: transparent;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    transition: height .2s ease;
+}
+
+.wrapper2{
+    position: absolute;
+    left: 270px;
+    top: 5px;
+    width: 500px;
+    height: 550px;
+    background: transparent;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    transition: height .2s ease;
+}
+
+.wrapper.active{
+    height: 630px;
+}
+
+.wrapper .form-box{
+    width: 100%;
+    padding: 40px;
+
+}
+
+.wrapper .form-box.login{
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+.wrapper.active .form-box.login{
+    transition: none;
+    transform: translateX(-500px);
+}
+
+
+
+
+.form-box h2{
+    font-size: 2em;
+    color: white;
+    text-align: center;
+}
+
+.input-box{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid #0b5032;
+    margin: 30px 0;
+}
+
+.input-box label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: white;
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label{
+    top: -5px;
+}
+
+.input-box input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: white;
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+}
+
+.btn{
+    width: 100%;
+    height: 45px;
+    background: #0b5032;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+
+.login-register{
+    font-size: .9em;
+    color: white;
+    text-align: center;
+    font-weight: 500;
+    margin: 25px 0 10px;
+}
+
+.login-register p a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+.login-register p{
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+}
+.login-register p a:hover{
+    text-decoration: underline;
+}
+
+
+
+
+
+

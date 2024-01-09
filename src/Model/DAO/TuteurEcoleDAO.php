@@ -19,10 +19,10 @@ class TuteurEcoleDAO {
 
     public function create(TuteurEcoleBO $tuteur) {
         try {
-            $query = "INSERT INTO tuteur_ecole (idTut, nomTut, prenomTut, numTut, mailTut, nbalterTut, loginTut, mdpTut, roleTut) 
-                      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            $query = "INSERT INTO tuteur_ecole ( nomTut, prenomTut, numTut, mailTut, nbalterTut, loginTut, mdpTut, roleTut) 
+                      VALUES ( ?, ?, ?, ?, ?, ?, ?, ?)";
             $stmt = $this->conn->prepare($query);
-            $stmt->execute([$tuteur->getIdTut(), $tuteur->getNomTut(), $tuteur->getPrenomTut(), $tuteur->getNumTut(), $tuteur->getMailTut(), $tuteur->getNbalterTut(), $tuteur->getLoginTut(), $tuteur->getMdpTut(), $tuteur->getRoleTut()]);
+            $stmt->execute([ $tuteur->getNomTut(), $tuteur->getPrenomTut(), $tuteur->getNumTut(), $tuteur->getMailTut(), $tuteur->getNbalterTut(), $tuteur->getLoginTut(), $tuteur->getMdpTut(), $tuteur->getRoleTut()]);
             return true;
         } catch (PDOException $e) {
             echo "Error: " . $e->getMessage();
@@ -38,7 +38,17 @@ class TuteurEcoleDAO {
             $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
             if ($result) {
-                return new TuteurEcoleBO($result['idTut'], $result['nomTut'], $result['prenomTut'], $result['numTut'], $result['mailTut'], $result['nbalterTut'], $result['loginTut'], $result['mdpTut'], $result['roleTut']);
+                return new TuteurEcoleBO(
+
+                    nomTut: ['nomTut'],
+                    prenomTut: ['prenomTut'],
+                    numTut: ['numTut'],
+                    mailTut: ['mailTut'],
+                    nbalterTut: ['nbalterTut'],
+                    loginTut: ['loginTut'],
+                    mdpTut: ['mdpTut'],
+                    roleTut: ['roleTut'],
+                    idTut: ['idTut']);
             }
 
             return null;
