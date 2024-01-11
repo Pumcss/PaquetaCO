@@ -217,4 +217,3 @@ INSERT INTO etre (idEntre, idMaitre, idEtu)VALUES (4, 4, 17);
 INSERT INTO etre (idEntre, idMaitre, idEtu)VALUES (3, 3, 18);
 INSERT INTO etre (idEntre, idMaitre, idEtu)VALUES (3, 3, 19);
 INSERT INTO etre (idEntre, idMaitre, idEtu)VALUES (2, 2, 20);
-
