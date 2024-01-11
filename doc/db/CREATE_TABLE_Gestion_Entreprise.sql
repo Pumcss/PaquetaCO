@@ -93,3 +93,4 @@ CREATE TABLE etre(
    CONSTRAINT etre_GK FOREIGN KEY(idMaitre) REFERENCES Maitre_entreprise(idMaitre),
    CONSTRAINT etre_LK FOREIGN KEY(idEtu) REFERENCES Etudiant(idEtu)
 )ENGINE = INNODB;
+
