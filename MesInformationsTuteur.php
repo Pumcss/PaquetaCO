@@ -1,6 +1,5 @@
 <?php
 
-
 require_once 'Config/appConfig.php';
 
 use BO\TuteurEcoleBO;

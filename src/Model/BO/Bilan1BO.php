@@ -2,12 +2,11 @@
 
 namespace BO;
 
-use DateTime;
 
 class Bilan1BO
 {
     private int $idBil1;
-    private DateTime $datevisiteBil1;
+    private string $datevisiteBil1;
     private  float $noteentreil1;
     private float $notedosBil1;
     private float $noteoraleBil1;
@@ -31,17 +30,17 @@ class Bilan1BO
     }
 
     /**
-     * @return DateTime
+     * @return string
      */
-    public function getDatevisiteBil1(): DateTime
+    public function getDateVisiteBil1(): string
     {
         return $this->datevisiteBil1;
     }
 
     /**
-     * @param DateTime $datevisiteBil1
+     * @param string $datevisiteBil1
      */
-    public function setDatevisiteBil1(DateTime $datevisiteBil1): void
+    public function setDatevisiteBil1(string $datevisiteBil1): void
     {
         $this->datevisiteBil1 = $datevisiteBil1;
     }
@@ -49,7 +48,7 @@ class Bilan1BO
     /**
      * @return float
      */
-    public function getNoteentreil1(): float
+    public function getNoteEntretienBil1(): float
     {
         return $this->noteentreil1;
     }
@@ -81,7 +80,7 @@ class Bilan1BO
     /**
      * @return float
      */
-    public function getNoteoraleBil1(): float
+    public function getNoteOraleBil1(): float
     {
         return $this->noteoraleBil1;
     }
@@ -126,14 +125,17 @@ class Bilan1BO
         $this->idEtu = $idEtu;
     }
 
-    public function __construct($idBil1, $datevisiteBil1, $noteentreil1, $notedosBil1, $noteoraleBil1, $remarqueBil1, $idEtu) {
-        $this->idBil1 = $idBil1;
-        $this->datevisiteBil1 = $datevisiteBil1;
-        $this->noteentreil1 = $noteentreil1;
-        $this->notedosBil1 = $notedosBil1;
-        $this->noteoraleBil1 = $noteoraleBil1;
-        $this->remarqueBil1 = $remarqueBil1;
-        $this->idEtu = $idEtu;
+
+    public function __construct($datevisiteBil1, $noteentreil1, $notedosBil1, $noteoraleBil1, $remarqueBil1, $idEtu, $idBil1 = null) {
+       if ($idBil1 != null) {
+           $this->idBil1 = $idBil1;
+       }
+       $this->datevisiteBil1 = $datevisiteBil1;
+       $this->noteentreil1 = $noteentreil1;
+       $this->notedosBil1 = $notedosBil1;
+       $this->noteoraleBil1 = $noteoraleBil1;
+       $this->remarqueBil1 = $remarqueBil1;
+       $this->idEtu = $idEtu;
     }
 
     public function ToString(): string

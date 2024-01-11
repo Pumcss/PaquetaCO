@@ -51,7 +51,6 @@ class EtudiantDAO {
                     idClasse: $result['idClasse'],
                     idTut: $result['idTut'],
                     idEtu: $result['idEtu'],
-
                 );
             }
 

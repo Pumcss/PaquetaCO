@@ -38,7 +38,7 @@
 
     <section class="wrp">
         <div class="container5">
-            <center> <a href="#"><h2>Paramétres Etudiant</h2></a>
+            <center> <a href="../Admin/Parametre%20Etudiant.php"><h2>Paramétres Etudiant</h2></a>
                 <br>
                 <p>Ici vous avez accès à tout les paramétres en lien avec les etudiants</p> </center>
         </div>
@@ -46,7 +46,7 @@
 
     <section class="wrp1">
         <div class="container1">
-            <center><a href="#"><h2>Paramétres Tuteur</h2></a>
+            <center><a href="../Admin/Parametre%20Tuteur.php"><h2>Paramétres Tuteur</h2></a>
                 <br>
                 <p>Ici vous avez accès à tout les paramétres en lien avec les tuteurs</p></center>
         </div>

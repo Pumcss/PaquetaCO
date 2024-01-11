@@ -2,6 +2,12 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
 @import url('https://fonts.googleapis.com/css?family=Lobster+Two');
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display');
+@import url('https://fonts.googleapis.com/css?family=Bungee+Spice');
+@import url('https://fonts.googleapis.com/css?family=Lemon');
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+/* https://fonts.google.com/specimen/Shadows+Into+Light */
+/* https://fonts.google.com/specimen/Indie+Flower */
+
 
 *{
     padding: 0%;
@@ -21,17 +27,19 @@ body{
 
 .hero{
     background-color: #449169;
-    height: 70px;
-    font-family: "Playfair Display" ;
+    height: 105px;
+    font-family: "Lobster" ;
+
 
 }
 
 
 .hero h2{
     position: absolute;
-    left: 37%;
+    left: 36%;
     top: 20px;
     color: white;
+    font-size: 2.5em;
 }
 
 .hero h1{
@@ -46,14 +54,14 @@ body{
 .hero button{
     position: absolute;
     right: 65px;
-    top: 17px;
+    top: 30px;
     font-size: 1.2em;
     font-weight: bold ;
     color: white;
     list-style-type: none;
     text-decoration: none;
-    width: 140px;
-    height: 30px;
+    width: 160px;
+    height: 45px;
     background: darkred;
     border: 2px solid rgb(139, 0, 0);
     border-radius: 20px;
@@ -63,14 +71,13 @@ body{
 
 .main{
     position: absolute;
-    left: 0px;
-    top: 70px;
+
     background-image: url('../../img/vct.jpg');
     width: 750px;
     height: 638px;
     background-size: cover;
     background-position: left -30px;
-    top: 70px;
+    top: 110px;
     left: -70px;
     list-style-type: none;
     text-decoration: none;
@@ -82,13 +89,12 @@ body{
 
 .main2{
     position: absolute;
-    right: 0px;
-    top: 70px;
+
     background-image: url('../../img/Free_Vector___Personal_files_concept_illustration.jpg');
     height: 570px;
     width: 752px;
     background-size: cover;
-    background-position: right -50px;
+
     top: 110px;
     right: -85px;
 }
@@ -479,10 +485,10 @@ nav ul.acc3 li a:hover{
     font-size: 1.5em;
     color: #367a58;
     position: absolute;
-    left: 31%;
+    font-family: "Lobster Two", cursive;
+    left: 34%;
     top: 30%;
 }
-
 
 
 .wrp .container5{
@@ -496,6 +502,7 @@ nav ul.acc3 li a:hover{
     border: 2px solid rgb(0, 0, 0);
 
 }
+
 .container5{
     padding-top: 15px;
 }
@@ -711,7 +718,7 @@ nav ul.acc3 li a:hover{
     left: 50%;
     transform: translate(-50%,-50%);
     width: 1100px;
-    height: 400px;
+    height: 435px;
     background-color: #f1f1f1;
     border-radius: 2px;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
@@ -729,7 +736,7 @@ nav ul.acc3 li a:hover{
     width: 550px;
     height: 130px;
     position: relative;
-    top: -15px;
+    top: 0px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -835,9 +842,7 @@ nav ul.acc3 li a:hover{
     top: 38px;
 }
 
-.hero5 nav ul.acc li a:hover{
-    color: #367a58;
-}
+
 
 /* LOGO */
 
@@ -856,4 +861,92 @@ nav ul.acc3 li a:hover{
     left: 41%;
     font-family: "Lobster Two", cursive;
     font-size: 2.5em;
+}
+
+
+
+
+
+
+
+/* PARAMETRE ETUDIANT */
+
+.hero8{
+    height: 110px;
+    background-color: #449169;
+}
+
+.hero8 nav ul.acc8 li a{
+    color: white;
+}
+.hero8 nav ul.acc8 li{
+    list-style-type: none;
+    display: inline-block;
+    padding: 0 200px;
+}
+
+.hero8 nav ul.acc8 li a{
+
+    color: white;
+    font-size: 1.6em;
+    font-weight: bold;
+    text-transform: capitalize;
+    text-decoration: none;
+    position: relative;
+    left: 280px;
+    top: 38px;
+}
+.hero8 nav ul.acc8 li a:hover{
+    color: #0b5032;
+}
+.logo8 img{
+    height: 90px;
+    width: 90px;
+    position: absolute;
+    top: 7px;
+    left: 700px;
+}
+
+.titre8 h1{
+    color: black;
+    position: absolute;
+    top: 145px;
+    left: 37.8%;
+    font-family: "Lobster Two", cursive;
+    font-size: 3em;
+}
+.titre8 h3{
+    color: #367a58;
+    position: absolute;
+    top: 220px;
+    left: 33%;
+    font-family: "Lobster Two", cursive;
+    font-size: 1.5em;
+}
+
+/* CORPUS */
+
+select{
+    width: 25%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+    background-color: #c2bcbc;
+    margin-bottom: 1rem;
+    position: absolute;
+    top: 53%;
+    left: 10px;
+}
+
+label {
+    display: block;
+    font-size: 1.2rem;
+    color: #000000;
+    margin-bottom: 0.5rem;
+    position: absolute;
+    top: 45%;
+    left: 14px;
+    font-weight: bold;
+    font-family: "Playfair Display";
 }
