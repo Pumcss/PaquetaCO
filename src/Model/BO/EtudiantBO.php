@@ -2,12 +2,10 @@
 
 namespace BO;
 
-
 class EtudiantBO
 {
     private int $idEtu;
     private string $nomEtu;
-
     private string $prenomEtu;
     private string $photoEtu;
     private string $mailEtu;
@@ -194,23 +192,24 @@ class EtudiantBO
     }
 
 
-    function __construct(?array $datas = null){
-        if(!is_null($datas)){
 
-            (isset($datas["idEtu"]))?$this->setIdEtu($datas["idEtu"]):$this->idEtu = null;
-            (isset($datas["nomEtu"]))?$this->getNomEtu($datas["nomEtu"]):$this->nomEtu = null;
-            (isset($datas["preEtu"]))?$this->getPreEtu($datas["preEtu"]):$this->preEtu = null;
-            (isset($datas["photoEtu"]))?$this->setPhotoEtu($datas["photoEtu"]):$this->photoEtu = null;
-            (isset($datas["nomEtu"]))?$this->getNomEtu($datas["nomEtu"]):$this->nomEtu = null;
-            (isset($datas["preEtu"]))?$this->getPreEtu($datas["preEtu"]):$this->preEtu = null;
-            (isset($datas["idEtu"]))?$this->setIdEtu($datas["idEtu"]):$this->idEtu = null;
-            (isset($datas["nomEtu"]))?$this->getNomEtu($datas["nomEtu"]):$this->nomEtu = null;
-            (isset($datas["preEtu"]))?$this->getPreEtu($datas["preEtu"]):$this->preEtu = null;
-
+    public function __construct($nomEtu, $prenomEtu, $photoEtu, $mailEtu, $telEtu, $loginEtu, $mdpEtu, $speEtu, $idClasse , $idTut, $idEtu = null) {
+        if ($idEtu != null){
+            $this->idEtu = $idEtu;
         }
+        $this->nomEtu = $nomEtu;
+        $this->prenomEtu = $prenomEtu;
+        $this->photoEtu = $photoEtu;
+        $this->mailEtu = $mailEtu;
+        $this->telEtu = $telEtu;
+        $this->loginEtu = $loginEtu;
+        $this->mdpEtu = $mdpEtu;
+        $this->speEtu = $speEtu;
+        $this->idClasse= $idClasse;
+        $this->idTut = $idTut;
     }
-    public function ToStringO() {
-        return "Etudiant - ID: $this->idEtu, Nom: $this->nomEtu, Prenom: $this->preEtu, Mail: $this->mailEtu, Tel: $this->telEtu, Login: $this->loginEtu, Specialite: $this->speEtu";
-
+    public function ToStringO(): string
+    {
+        return "Etudiant - ID: $this->idEtu, Nom: $this->nomEtu, Prenom: $this->prenomEtu, Mail: $this->mailEtu, Tel: $this->telEtu, Login: $this->loginEtu, Specialite: $this->speEtu";
     }
 }

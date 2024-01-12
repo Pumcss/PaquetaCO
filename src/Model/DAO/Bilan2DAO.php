@@ -2,15 +2,13 @@
 
 namespace DAO;
 
-
-
 use BO\Bilan2BO;
 use PDO;
 use PDOException;
 
 
 class Bilan2DAO {
-    private $conn;
+    private PDO $conn;
 
     public function __construct() {
         $db = new Database();
@@ -31,7 +29,8 @@ class Bilan2DAO {
         }
     }
 
-    public function read($idBil2) {
+    public function read($idBil2): ?Bilan2BO
+    {
         try {
             $query = "SELECT * FROM bilan_2 WHERE idBil2 = ?";
             $stmt = $this->conn->prepare($query);
@@ -39,7 +38,16 @@ class Bilan2DAO {
             $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
             if ($result) {
-                return new Bilan2BO($result['idBil2'], $result['dateBil2'], $result['notedosBil2'], $result['noteoralBil2'], $result['remarqueBil2'], $result['memoirBil2'],['idEtu']);
+                return new Bilan2BO(
+
+                    dateBil2:$result ['dateBil2'],
+                    notedosBil2: $result['notedosBil2'],
+                    noteoralBil2: $result['noteoralBil2'],
+                    remarqueBil2:$result['remarqueBil2'],
+                    memoirBil2: $result['memoirBil2'],
+                    idEtu: $result['idEtu'],
+                    idBil2: $result['idBil2'],
+                );
             }
 
             return null;

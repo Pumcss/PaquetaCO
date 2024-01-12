@@ -4,7 +4,6 @@ namespace BO;
 
 class ClasseBO
 {
-
     Private int $idClasse;
     private string $nomClasse;
 

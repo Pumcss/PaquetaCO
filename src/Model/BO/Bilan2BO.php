@@ -5,7 +5,7 @@ namespace BO;
 class Bilan2BO
 {
     private int $idBil2;
-    private \DateTime  $dateBil2;
+    private string  $dateBil2;
     private float $notedosBil2;
     private float $noteoralBil2;
     private string $remarqueBil2;
@@ -29,17 +29,17 @@ class Bilan2BO
     }
 
     /**
-     * @return \DateTime
+     * @return string
      */
-    public function getDateBil2(): \DateTime
+    public function getDateBil2(): string
     {
         return $this->dateBil2;
     }
 
     /**
-     * @param \DateTime $dateBil2
+     * @param string $dateBil2
      */
-    public function setDateBil2(\DateTime $dateBil2): void
+    public function setDateBil2(string $dateBil2): void
     {
         $this->dateBil2 = $dateBil2;
     }
@@ -125,8 +125,10 @@ class Bilan2BO
     }
 
 
-    public function __construct($idBil2, $dateBil2, $notedosBil2, $noteoralBil2, $remarqueBil2, $memoirBil2,$idEtu) {
-        $this->idBil2 = $idBil2;
+    public function __construct( $dateBil2, $notedosBil2, $noteoralBil2, $remarqueBil2, $memoirBil2,$idEtu,$idBil2=null) {
+       if ($idBil2 != null ){
+           $this->idBil2 = $idBil2;
+       }
         $this->dateBil2 = $dateBil2;
         $this->notedosBil2 = $notedosBil2;
         $this->noteoralBil2 = $noteoralBil2;

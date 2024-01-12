@@ -7,9 +7,8 @@ class MaitreEntrepriseBO
     private int $idMaitre;
     private string $nomMaitre;
     private string $prenomMaitre;
-    private string $telMaitre;
+    private int $telMaitre;
     private string $mailMaitre;
-
 
     /**
      * @return int

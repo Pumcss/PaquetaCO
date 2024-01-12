@@ -8,7 +8,7 @@ class EntrepriseBO
     private string $nomEntre;
     private string $adresseEntre;
     private string $villeEntre;
-    private string $codePostEntre;
+    private int $codePostEntre;
 
     /**
      * @return int

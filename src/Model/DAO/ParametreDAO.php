@@ -2,11 +2,11 @@
 
 namespace DAO;
 
-
 use BO\ParametreBO;
 use PDOException;
 
-
+require_once 'Database.php';
+require_once 'ParametreBO.php';
 
 class ParametreDAO {
     private $conn;

@@ -1,0 +1,952 @@
+/* Police de caractères personnalisée */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+@import url('https://fonts.googleapis.com/css?family=Lobster+Two');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display');
+@import url('https://fonts.googleapis.com/css?family=Bungee+Spice');
+@import url('https://fonts.googleapis.com/css?family=Lemon');
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+/* https://fonts.google.com/specimen/Shadows+Into+Light */
+/* https://fonts.google.com/specimen/Indie+Flower */
+
+
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100%;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    position: fixed;
+}
+
+
+/* Accueil Etudiant */
+
+.hero{
+    background-color: #449169;
+    height: 105px;
+    font-family: "Lobster" ;
+
+
+}
+
+
+.hero h2{
+    position: absolute;
+    left: 36%;
+    top: 20px;
+    color: white;
+    font-size: 2.5em;
+}
+
+.hero h1{
+    position: absolute;
+    left: 25px;
+    top: 17px;
+    color: white;
+    font-weight: bold;
+    font-size: 2em;
+}
+
+.hero button{
+    position: absolute;
+    right: 65px;
+    top: 30px;
+    font-size: 1.2em;
+    font-weight: bold ;
+    color: white;
+    list-style-type: none;
+    text-decoration: none;
+    width: 160px;
+    height: 45px;
+    background: darkred;
+    border: 2px solid rgb(139, 0, 0);
+    border-radius: 20px;
+
+}
+
+
+.main{
+    position: absolute;
+
+    background-image: url('../../img/vct.jpg');
+    width: 750px;
+    height: 638px;
+    background-size: cover;
+    background-position: left -30px;
+    top: 110px;
+    left: -70px;
+    list-style-type: none;
+    text-decoration: none;
+}
+.main ul li a{
+    visibility: hidden;
+    text-decoration: none;
+}
+
+.main2{
+    position: absolute;
+
+    background-image: url('../../img/Free_Vector___Personal_files_concept_illustration.jpg');
+    height: 570px;
+    width: 752px;
+    background-size: cover;
+
+    top: 110px;
+    right: -85px;
+}
+
+.main2 ul li a{
+    visibility: hidden;
+    text-decoration: none;
+    position: absolute;
+    left: 700px;
+}
+
+.main2 img{
+    position: absolute;
+    left: 40px;
+    bottom: 35px;
+    width: 135px;
+    height: 135px;
+}
+
+
+#cercle2 {
+    position: absolute;
+    left: -159px;
+    top: 150px;
+    width: 200px;
+    height: 200px;
+    border-radius: 200px;
+    background: transparent;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    border: 2px solid rgba(255, 255, 255, .5);
+
+}
+
+.wrapper{
+    position: relative;
+    left: 400px;
+    bottom: -70px;
+    width: 255px;
+    height: 70px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    list-style-type: none;
+}
+
+.wrapper h2 a{
+    list-style-type: none;
+    text-decoration: none;
+    position: absolute;
+    top: 17px;
+    left: 15%;
+    color: black;
+    font-weight: bold;
+}
+
+
+
+.wrapper2{
+    position: relative;
+    left: -450px;
+    bottom: -0px;
+    width: 250px;
+    height: 70px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    list-style-type: none;
+}
+
+.wrapper2 h2 a{
+    list-style-type: none;
+    text-decoration: none;
+    position: absolute;
+    top: 17px;
+    left: 27%;
+    color: black;
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+/* Accueil Tuteur */
+
+
+
+
+
+.main3 nav span{
+    color: #449169;
+
+}
+
+.main3 nav h2{
+    color: #000000;
+
+}
+
+.main3 div img{
+    position: absolute;
+    right: 100px;
+    bottom: 10px;
+    width: 550px;
+    height: 550px;
+}
+
+.main3 nav h1{
+    position: absolute;
+    left: 50px;
+    top: 200px;
+    font-size: 3em;
+    font-family: "Lobster Two", cursive;
+
+}
+
+.main3 nav h3{
+    position: absolute;
+    left: 53px;
+    top: 280px;
+    font-size: 1.5em;
+    color: #367a58;
+    font-family: "Playfair Display";
+}
+
+.hero2{
+    background-color: #449169;
+    height: 95px;
+
+}
+
+
+.hero2 button{
+    position: absolute;
+    right: 65px;
+    top: 35px;
+    font-size: 1.2em;
+    font-weight: bold ;
+    color: white;
+    list-style-type: none;
+    text-decoration: none;
+    width: 140px;
+    height: 30px;
+    background: #8b0015;
+    border: 2px solid rgb(139, 0, 21);
+    border-radius: 20px;
+
+}
+
+.hero2 ul li{
+    color: white;
+    font-weight: bold;
+
+}
+
+.hero2 nav ul.acc li{
+    list-style-type: none;
+    display: inline-block;
+    padding: 0 70px;
+}
+
+.logo img{
+    width: 78px;
+    height: 78px;
+    position: absolute;
+    top: 10px;
+    left: 15px;
+
+}
+
+.hero2 nav ul.acc li a{
+    font-family: "JetBrains Mono ExtraLight";
+    color: white;
+    font-size: 1.3em;
+    font-weight: bold;
+    text-transform: capitalize;
+    text-decoration: none;
+    position: relative;
+    left: 310px;
+    top: 38px;
+}
+
+.hero2 nav ul.acc li a:hover{
+    color: #0b5032;
+}
+
+.Main3 .title{
+    position: absolute;
+    left: 200px;
+    top: 390px;
+    font-size: 2em;
+    font-family: "Playfair Display";
+}
+
+.Main3 .title2{
+    position: absolute;
+    left: 310px;
+    top: 470px;
+    font-size: 2em;
+    font-family: "Playfair Display";
+}
+
+.Main3 .title3{
+    position: absolute;
+    left: 420px;
+    top: 550px;
+    font-size: 2em;
+    font-family: "Playfair Display";
+}
+
+
+
+
+
+/* Accueil Admin */
+
+
+.main4 nav span{
+    color: #449169;
+}
+
+.main4 nav h2{
+    color: #000000;
+}
+
+.main4 div img{
+    position: absolute;
+    left: 100px;
+    bottom: 10px;
+    width: 550px;
+    height: 550px;
+}
+
+.main4 nav h1{
+    position: absolute;
+    right: 170px;
+    top: 200px;
+    font-size: 2.5em;
+    font-family: "Lobster Two", cursive;
+}
+
+.main4 nav h3{
+    position: absolute;
+    right: 168px;
+    top: 280px;
+    font-size: 1.4em;
+    color: #367a58;
+}
+
+.hero3{
+    background-color: #449169;
+    height: 95px;
+    font-family: Leelawadee ;
+}
+
+
+
+.hero3 button{
+    position: absolute;
+    right: 65px;
+    top: 35px;
+    font-size: 1.2em;
+    font-weight: bold ;
+    color: white;
+    list-style-type: none;
+    text-decoration: none;
+    width: 140px;
+    height: 30px;
+    background: #8b0015;
+    border: 2px solid rgb(139, 0, 21);
+    border-radius: 20px;
+
+}
+
+.hero3 ul li{
+    color: white;
+    font-weight: bold;
+
+}
+
+nav ul.acc li{
+    list-style-type: none;
+    display: inline-block;
+    padding: 0 70px;
+}
+
+nav ul.acc1 li{
+    list-style-type: none;
+    display: inline-block;
+    padding: 0 55px;
+}
+
+.logo img{
+    width: 78px;
+    height: 78px;
+    position: absolute;
+    top: 10px;
+    left: 15px;
+
+}
+
+nav ul.acc1 li a{
+    font-family: "JetBrains Mono ExtraLight";
+    color: white;
+    font-size: 1.3em;
+    font-weight: bold;
+    text-transform: capitalize;
+    text-decoration: none;
+    position: relative;
+    left: 270px;
+    top: 38px;
+}
+
+nav ul.acc1 li a:hover{
+    color: #0b5032;
+}
+nav ul.acc2 li a{
+    font-family: "JetBrains Mono ExtraLight";
+    color: white;
+    font-size: 1.3em;
+    font-weight: bold;
+    text-transform: capitalize;
+    text-decoration: none;
+    position: relative;
+    left: 1070px;
+    top: 11px;
+    width: 140px;
+    height: 30px;
+    background: transparent;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    display: flex;
+    justify-content: center;
+}
+
+nav ul.acc2 li a:hover{
+    color: #0b5032;
+}
+
+/* NAVBAR PARAMETRES */
+
+nav ul.acc3 li{
+    list-style-type: none;
+    display: inline-block;
+    padding: 0 80px;
+}
+nav ul.acc3 li a{
+    font-family: "JetBrains Mono ExtraLight";
+    color: white;
+    font-size: 1.3em;
+    font-weight: bold;
+    text-transform: capitalize;
+    text-decoration: none;
+    position: relative;
+    left: 250px;
+    top: 38px;
+}
+nav ul.acc3 li a:hover{
+    color: #0b5032;
+}
+
+/* FIN NAVBAR PARAMETRE */
+/* CORPUS PARAMETRE */
+
+.titre h1{
+    position: absolute;
+    left: 42.5%;
+    top: 17%;
+    color: #000000;
+    font-family: "Lobster Two", cursive;
+    font-size: 3.5em;
+}
+.titre h3{
+    font-size: 1.5em;
+    color: #367a58;
+    position: absolute;
+    font-family: "Lobster Two", cursive;
+    left: 34%;
+    top: 30%;
+}
+
+
+.wrp .container5{
+    position: absolute;
+    left: 50px;
+    top: 55%;
+    width: 500px;
+    height: 119px;
+    background-color: #367a58;
+    border-radius: 20px;
+    border: 2px solid rgb(0, 0, 0);
+
+}
+
+.container5{
+    padding-top: 15px;
+}
+.container5 h2{
+    color: white;
+}
+.container5 a{
+    text-decoration: none;
+}
+.container5 p{
+    font-size: 1.1em;
+}
+
+
+.wrp1{
+    position: absolute;
+    right: 50px;
+    top: 55%;
+    width: 500px;
+    height: 120px;
+    background-color: #367a58;
+    border-radius: 20px;
+    border: 2px solid rgb(0, 0, 0);
+}
+.container1{
+    padding-top: 15px;
+}
+.container1 h2{
+    color: white;
+    font-weight: bold;
+}
+.container1 a{
+    text-decoration: none;
+}
+.container1 p{
+    font-size: 1.1em;
+}
+
+
+/* FIN CORPUS PARAMETRE */
+
+
+
+
+
+
+
+.main4 .title{
+    position: absolute;
+    left: 900px;
+    top: 390px;
+    font-size: 1.5em;
+}
+
+.main4 .title2{
+    position: absolute;
+    left: 1010px;
+    top: 470px;
+    font-size: 1.5em;
+}
+
+.main4 .title3{
+    position: absolute;
+    left: 1120px;
+    top: 550px;
+    font-size: 1.5em;
+}
+
+
+
+
+/* follow me template */
+.made-with-love {
+    position: absolute;
+    left: 30px;
+    bottom: 15px;
+    clear: left;
+    text-align: center;
+    font-size: 12px;
+    font-family: arial;
+    color: #000000;
+}
+.made-with-love i {
+    font-style: normal;
+    color: #F50057;
+    font-size: 50px;
+    position: relative;
+    top: 2px;
+}
+.made-with-love a {
+    color: #fff;
+    text-decoration: none;
+}
+.made-with-love a:hover {
+    text-decoration: underline;
+}
+
+
+/* for custom scrollbar for webkit browser*/
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+
+
+
+
+/* MES INFORMATIONS */
+
+/* NAVBAR */
+
+.hero1{
+    height: 95px;
+    background-color: #449169;
+}
+
+.hero1 nav ul.acc li a{
+    color: white;
+}
+.hero1 nav ul.acc li{
+    list-style-type: none;
+    display: inline-block;
+    padding: 0 100px;
+}
+
+.hero1 nav ul.acc li a{
+
+    color: white;
+    font-size: 1.4em;
+    font-weight: bold;
+    text-transform: capitalize;
+    text-decoration: none;
+    position: relative;
+    left: 310px;
+    top: 38px;
+}
+
+.hero1 nav ul.acc li a:hover{
+    color: #0b5032;
+}
+
+/* LOGO */
+
+.logo1 img{
+    height: 80px;
+    width: 80px;
+    position: absolute;
+    top: 7px;
+    left: 20px;
+}
+
+/* TITRE */
+
+.titre1 .letter1{
+    position: absolute;
+    top: 250px;
+    left: 150px;
+    font-size: 3.5em;
+    font-family: "Lobster Two", cursive;
+}
+
+.titre1 .letter2{
+    position: absolute;
+    top: 370px;
+    left: 230px;
+    font-size: 3.5em;
+    font-family: "Lobster Two", cursive;
+}
+
+/* CORPUS */
+
+.wrp3{
+    position: absolute;
+    right: 200px;
+    top: 200px;
+    width: 450px;
+    height: 450px;
+    background-color: #449169;
+    border-radius: 20px;
+    border: 2px solid black;
+}
+
+.wrp3 .Text{
+    padding-left: 20px;
+    padding-top: 25px;
+    color: white;
+}
+
+/* ICONE PHOTO */
+
+.photo img{
+    width: 110px;
+    height: 110px;
+    position: absolute;
+    top: 220px;
+    right: 230px;
+}
+
+
+
+/* MES BILANS */
+
+.container{
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 1100px;
+    height: 435px;
+    background-color: #f1f1f1;
+    border-radius: 2px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.container-onglets{
+    background-color: #f1f1f1;
+    width: 100%;
+    height: 30%;
+    display: flex;
+    border-bottom: 1px solid #333;
+}
+
+.onglets{
+    width: 550px;
+    height: 130px;
+    position: relative;
+    top: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.onglets:not(:nth-child(2)){
+    border-right: 1px solid #333;
+}
+
+.contenu{
+    height: 70%;
+    width: 100%;
+    position: absolute;
+    opacity: 0;
+}
+
+.contenu hr{
+    width: 20%;
+    height: 2px;
+    margin-left: 20px;
+    background-color: #000;
+    border: none;
+}
+
+.active{
+    background: #0b5032;
+    color: #f1f1f1;
+    transition: all 0.3s ease;
+}
+
+.activeContenu{
+    animation: fade 0.5s forwards;
+}
+
+@keyframes fade {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+
+
+
+.tbl-header table tr{
+    color: #000000;
+    font-size: 1.4em;
+}
+
+.tbl-header{
+    padding-top: 15px;
+    padding-left: -5px;
+}
+
+.tbl-content{
+    padding-left: 15px;
+}
+
+.tbl-header table tr th{
+    padding: 0 80px;
+    padding-left: 5px;
+}
+
+.tbl-content table tr td{
+    padding: 0 86px;
+
+}
+
+.tbl-content table tr{
+    font-size: 1.1em;
+}
+
+
+/* NAVBAR BIlAN */
+
+.hero5{
+    height: 110px;
+    background-color: #0b5032;
+}
+
+.hero5 nav ul.acc li a{
+    color: white;
+}
+.hero5 nav ul.acc li{
+    list-style-type: none;
+    display: inline-block;
+    padding: 0 200px;
+}
+
+.hero5 nav ul.acc li a{
+
+    color: white;
+    font-size: 1.4em;
+    font-weight: bold;
+    text-transform: capitalize;
+    text-decoration: none;
+    position: relative;
+    left: 280px;
+    top: 38px;
+}
+
+
+
+/* LOGO */
+
+.logo2 img{
+    height: 90px;
+    width: 90px;
+    position: absolute;
+    top: 7px;
+    left: 690px;
+}
+
+.title3{
+    color: black;
+    position: absolute;
+    top: 145px;
+    left: 41%;
+    font-family: "Lobster Two", cursive;
+    font-size: 2.5em;
+}
+
+
+
+
+
+
+
+/* PARAMETRE ETUDIANT */
+
+.hero8{
+    height: 110px;
+    background-color: #449169;
+}
+
+.hero8 nav ul.acc8 li a{
+    color: white;
+}
+.hero8 nav ul.acc8 li{
+    list-style-type: none;
+    display: inline-block;
+    padding: 0 200px;
+}
+
+.hero8 nav ul.acc8 li a{
+
+    color: white;
+    font-size: 1.6em;
+    font-weight: bold;
+    text-transform: capitalize;
+    text-decoration: none;
+    position: relative;
+    left: 280px;
+    top: 38px;
+}
+.hero8 nav ul.acc8 li a:hover{
+    color: #0b5032;
+}
+.logo8 img{
+    height: 90px;
+    width: 90px;
+    position: absolute;
+    top: 7px;
+    left: 700px;
+}
+
+.titre8 h1{
+    color: black;
+    position: absolute;
+    top: 145px;
+    left: 37.8%;
+    font-family: "Lobster Two", cursive;
+    font-size: 3em;
+}
+.titre8 h3{
+    color: #367a58;
+    position: absolute;
+    top: 220px;
+    left: 33%;
+    font-family: "Lobster Two", cursive;
+    font-size: 1.5em;
+}
+
+/* CORPUS */
+
+select{
+    width: 25%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+    background-color: #c2bcbc;
+    margin-bottom: 1rem;
+    position: absolute;
+    top: 53%;
+    left: 10px;
+}
+
+label {
+    display: block;
+    font-size: 1.2rem;
+    color: #000000;
+    margin-bottom: 0.5rem;
+    position: absolute;
+    top: 45%;
+    left: 14px;
+    font-weight: bold;
+    font-family: "Playfair Display";
+}

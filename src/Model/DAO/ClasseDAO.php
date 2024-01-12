@@ -2,10 +2,12 @@
 
 namespace DAO;
 
-
 use BO\ClasseBO;
 use PDO;
 use PDOException;
+
+require_once 'Database.php';
+require_once 'ClasseBO.php';
 
 class ClasseDAO {
     private $conn;

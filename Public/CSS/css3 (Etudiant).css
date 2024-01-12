@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+@import url('https://fonts.googleapis.com/css?family=Lobster+Two');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display');
+
+/* Accueil Etudiant */
+
+
+.hero img{
+    position: absolute;
+    left: 40px;
+    top: 10px;
+    width: 80px;
+    height: 80px;
+}
+
+
+
+.hero ul li{
+    color: #0b5032;
+    font-weight: bold;
+}
+
+
+
+nav ul.acc li{
+    list-style-type: none;
+    display: inline-block;
+    padding: 0 100px;
+}
+
+
+
+nav ul.acc li a{
+    color: white;
+    font-size: 1.3em;
+    font-weight: bold;
+    text-transform: capitalize;
+    text-decoration: none;
+    position: relative;
+    left: 300px;
+    top: 25px;
+}
+
+
+
+h1{
+    font-size: 30px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 300;
+    text-align: center;
+    position: absolute;
+    top: 120px;
+    left: 580px;
+    font-weight: bold;
+}
+table{
+    width:100%;
+    table-layout: fixed;
+
+}
+
+.tbl-header{
+    background-color: rgba(255,255,255,0.3);
+}
+.tbl-content{
+    height:350px;
+    overflow-x:auto;
+    margin-top: 0px;
+    border: 1px solid rgba(255,255,255,0.3);
+}
+th{
+    padding: 25px ;
+    text-align: left;
+    font-weight: bold;
+    font-size: 15px;
+    color: #fff;
+    text-transform: uppercase;
+}
+td{
+    padding: 25px;
+    text-align: left;
+    vertical-align:middle;
+    font-weight: 300;
+    font-size: 15px;
+    color: black;
+    background-color: white;
+    border-bottom: solid 1px rgba(255,255,255,0.1);
+}
+
+
+/* demo styles */
+
+
+body{
+
+    background: -webkit-linear-gradient(left, #449169, #449169);
+    background: linear-gradient(to right, #449169, #449169);
+    font-family: "JetBrains Mono ExtraLight";
+}
+section{
+    margin: 25px;
+    position: absolute;
+    top: 180px;
+}
+
+
+/* follow me template */
+.made-with-love {
+    position: absolute;
+    right: 40px;
+    top: 15px;
+    clear: left;
+    text-align: center;
+    font-size: 10px;
+    font-family: arial;
+    color: #fff;
+}
+.made-with-love i {
+    font-style: normal;
+    color: #F50057;
+    font-size: 50px;
+    position: relative;
+    top: 2px;
+}
+.made-with-love a {
+    color: #fff;
+    text-decoration: none;
+}
+.made-with-love a:hover {
+    text-decoration: underline;
+}
+
+
+/* for custom scrollbar for webkit browser*/
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+
+
+
+.hero .acc ul li a{
+    display: inline-block;
+    transition: color 250ms, text-shadow 250ms;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px rgba(255, 255, 255, 1);
+    position: relative;
+    z-index: 0;
+}
+.hero .acc::after {
+    position: absolute;
+    z-index: -1;
+    top: 12px;
+    left: 785px;
+    transform: translateX(-50%);
+    content: '';
+    width: 800px;
+    height: 0px;
+    background-color: rgba(255, 255, 255, 0.3);
+    transition: all 250ms;
+}
+.hero .acc:hover {
+    color: white;
+    text-shadow: 0px 1px 0px rgba(0, 0, 0, 1);
+}
+.hero .acc:hover::after {
+    height: 10%;
+    width: 50%;
+}

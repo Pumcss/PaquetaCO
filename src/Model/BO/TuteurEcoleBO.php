@@ -9,7 +9,7 @@ class TuteurEcoleBO
     private string $prenomTut;
     private string $numTut;
     private string $mailTut;
-    private string $nbalterTut;
+    private int $nbalterTut;
     private string  $loginTut;
     private string $mdpTut;
     private string $roleTut;
@@ -95,17 +95,17 @@ class TuteurEcoleBO
     }
 
     /**
-     * @return string
+     * @return int
      */
-    public function getNbalterTut(): string
+    public function getNbalterTut(): int
     {
         return $this->nbalterTut;
     }
 
     /**
-     * @param string $nbalterTut
+     * @param int $nbalterTut
      */
-    public function setNbalterTut(string $nbalterTut): void
+    public function setNbalterTut(int $nbalterTut): void
     {
         $this->nbalterTut = $nbalterTut;
     }
@@ -158,8 +158,12 @@ class TuteurEcoleBO
         $this->roleTut = $roleTut;
     }
 
-    public function __construct($idTut, $nomTut, $prenomTut, $numTut, $mailTut, $nbalterTut, $loginTut, $mdpTut, $roleTut) {
-        $this->idTut = $idTut;
+    public function __construct( $nomTut, $prenomTut, $numTut, $mailTut, $nbalterTut, $loginTut, $mdpTut, $roleTut, $idTut = null) {
+        var_dump($idTut);
+        if ($idTut != null){
+            $this->idTut = $idTut;
+        }
+
         $this->nomTut = $nomTut;
         $this->prenomTut = $prenomTut;
         $this->numTut = $numTut;

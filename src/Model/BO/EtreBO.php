@@ -8,7 +8,6 @@ class EtreBO
     private int $idEntre;
     private int $idMaitre;
 
-
     public function getIdEtu(): int
     {
         return $this->idEtu;
@@ -49,7 +48,6 @@ class EtreBO
     {
         $this->idMaitre = $idMaitre;
     }
-
 
     public function __construct($idEtu, $idEntre, $idMaitre) {
         $this->idEtu = $idEtu;

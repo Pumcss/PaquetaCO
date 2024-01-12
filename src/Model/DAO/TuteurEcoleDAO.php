@@ -2,15 +2,15 @@
 
 namespace DAO;
 
-
 use BO\TuteurEcoleBO;
 use PDO;
 use PDOException;
 
 
 
+
 class TuteurEcoleDAO {
-    private $conn;
+    private PDO $conn;
 
     public function __construct() {
         $db = new Database();
@@ -19,11 +19,10 @@ class TuteurEcoleDAO {
 
     public function create(TuteurEcoleBO $tuteur) {
         try {
-
-            $query = "INSERT INTO tuteur_ecole (idTut, nomTut, prenomTut, numTut, mailTut, nbalterTut, loginTut, mdpTut, roleTut) 
-                      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            $query = "INSERT INTO tuteur_ecole ( nomTut, prenomTut, numTut, mailTut, nbalterTut, loginTut, mdpTut, roleTut) 
+                      VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
             $stmt = $this->conn->prepare($query);
-            $stmt->execute([$tuteur->getIdTut(), $tuteur->getNomTut(), $tuteur->getPrenomTut(), $tuteur->getNumTut(), $tuteur->getMailTut(), $tuteur->getNbalterTut(), $tuteur->getLoginTut(), $tuteur->getMdpTut(), $tuteur->getRoleTut()]);
+            $stmt->execute([ $tuteur->getNomTut(), $tuteur->getPrenomTut(), $tuteur->getNumTut(), $tuteur->getMailTut(), $tuteur->getNbalterTut(), $tuteur->getLoginTut(), $tuteur->getMdpTut(), $tuteur->getRoleTut()]);
             return true;
         } catch (PDOException $e) {
             echo "Error: " . $e->getMessage();
@@ -31,7 +30,8 @@ class TuteurEcoleDAO {
         }
     }
 
-    public function read($idTut) {
+    public function read($idTut): ?TuteurEcoleBO
+    {
         try {
             $query = "SELECT * FROM tuteur_ecole WHERE idTut = ?";
             $stmt = $this->conn->prepare($query);
@@ -39,7 +39,18 @@ class TuteurEcoleDAO {
             $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
             if ($result) {
-                return new TuteurEcoleBO($result['idTut'], $result['nomTut'], $result['prenomTut'], $result['numTut'], $result['mailTut'], $result['nbalterTut'], $result['loginTut'], $result['mdpTut'], $result['roleTut']);
+                return new TuteurEcoleBO(
+                    nomTut: $result['nomTut'],
+                    prenomTut: $result['prenomTut'],
+                    numTut: $result['numTut'],
+                    mailTut: $result['mailTut'],
+                    nbalterTut: $result['nbalterTut'],
+                    loginTut: $result['loginTut'],
+                    mdpTut: $result['mdpTut'],
+                    roleTut: $result['roleTut'],
+                    idTut: $result['idTut'],
+                );
+
             }
 
             return null;

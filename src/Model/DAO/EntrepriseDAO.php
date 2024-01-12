@@ -2,11 +2,12 @@
 
 namespace DAO;
 
-
 use BO\EntrepriseBO;
 use PDO;
 use PDOException;
 
+require_once 'Database.php';
+require_once 'EntrepriseBO.php';
 
 class EntrepriseDAO {
     private $conn;
@@ -19,7 +20,8 @@ class EntrepriseDAO {
     public function create(EntrepriseBO $entreprise): bool
     {
         try {
-            $query = "INSERT INTO entreprise (idEntre, nomEntre, adresseEntre, villeEntre, codePostEntre) VALUES (?, ?, ?, ?, ?)";
+            $query = "INSERT INTO entreprise (idEntre, nomEntre, adresseEntre, villeEntre, codePostEntre) 
+                      VALUES (?, ?, ?, ?, ?)";
             $stmt = $this->conn->prepare($query);
             $stmt->execute([$entreprise->getIdEntre(), $entreprise->getNomEntre(), $entreprise->getAdresseEntre(), $entreprise->getVilleEntre(), $entreprise->getCodePostEntre()]);
             return true;

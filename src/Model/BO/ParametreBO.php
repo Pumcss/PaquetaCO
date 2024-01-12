@@ -6,7 +6,6 @@ use DateTime;
 
 class ParametreBO
 {
-
     private int $idParametre;
     private DateTime $datelimitebil1;
     private DateTime $dateLimitebil2;
